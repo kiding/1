@@ -132,10 +132,6 @@ function m() {
 }
 
 function init() {
-	var h = $("html")
-	h.height("200%")
-	window.scrollTo(0, 1)
-	h.height(window.innerHeight)
 	var t = document.getElementById("title")
 	$(t).animate({opacity: 1}, 1000, 'linear', function() {
 		t.addEventListener("click", m, true)
