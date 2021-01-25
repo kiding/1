@@ -51,18 +51,7 @@ function color() {
 	var a = $(".a")
 	var b = $(".b")
 	var l = 11.3 * 1000
-	var bgOpacity;
-
-	if(bg.css("opacity") == 0) {
-		$("#s").animate({opacity: 0}, 3000)
-
-		bgOpacity = 1
-	} else {
-		$("#s").animate({opacity: 0.5}, 3000)
-
-		bgOpacity = 0
-	}
-
+	var bgOpacity = bg.css("opacity") == 0 ? 1 : 0;
 	bg.animate({"opacity":bgOpacity}, l)
 
 	if(elems.length) {
@@ -149,10 +138,6 @@ function init() {
 	h.height(window.innerHeight)
 	var t = document.getElementById("title")
 	$(t).animate({opacity: 1}, 1000, 'linear', function() {
-		t.addEventListener("mouseup", m, true)
-		t.addEventListener("touchstart", m, true)
+		t.addEventListener("click", m, true)
 	})
-	setTimeout(function() {
-		$("#s").animate({opacity: 1}, 1000)
-	}, 1000)
 }
