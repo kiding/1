@@ -19,13 +19,11 @@ function text() {
 	if(($(".a").length)) {
 		left = (Math.random()*100)-40
 		top = (Math.random()*100)-40
-		ze.css("opacity", Math.random())
 	} else {
 		left = 50
 		top = 50
 		ze.css("marginLeft", "-" + size / 2 + "px")
 		ze.css("marginTop", "-" + (size / 2 - size * 0.06) + "px")
-		ze.css("opacity", "1")
 	}
 
 	ze.css("left", left + "%");
@@ -55,12 +53,15 @@ function color() {
 	bg.animate({"opacity":bgOpacity}, l)
 
 	if(elems.length) {
+		const r = Math.floor((Math.random() * 255));
+		const g = Math.floor((Math.random() * 255));
+		const b = Math.floor((Math.random() * 255));
+
 		setTimeout(function(){
 			elems.forEach(function(item, index, array) {
-				if($(item).css("color") == "rgb(255, 255, 255)")
-					$(item).animate({color:"rgb(0, 0, 0)"}, l/2)
-				else
-					$(item).animate({color:"rgb(255, 255, 255)"}, l/2)					
+				if($(item).css("color") == "rgb(255, 255, 255)") {
+					$(item).animate({color:`rgb(${r}, ${g}, ${b})`}, l/2)
+				}
 			})
 		}, l/2)
 	}

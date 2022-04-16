@@ -37,6 +37,7 @@ span.a, span.b {
 	text-align: center;
 	z-index: 1;
 	-webkit-font-smoothing: antialised;
+	mix-blend-mode: difference;
 }
 
 span.a {
